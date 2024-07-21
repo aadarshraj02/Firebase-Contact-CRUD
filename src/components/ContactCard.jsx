@@ -31,7 +31,10 @@ const COntactCard = ({ contact }) => {
           </div>
         </div>
         <div className="flex items-center gap-2 text-3xl">
-          <LiaUserEditSolid className="cursor-pointer text-zinc-500" />
+          <LiaUserEditSolid
+            onClick={onOpen}
+            className="cursor-pointer text-zinc-500"
+          />
           <IoMdTrash
             onClick={() => deleteContact(contact.id)}
             className="cursor-pointer text-orange"
