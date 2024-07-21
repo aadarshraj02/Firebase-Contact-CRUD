@@ -1,6 +1,6 @@
 import { HiOutlineUserCircle } from "react-icons/hi";
 import { IoMdTrash } from "react-icons/io";
-import { RiEditCircleLine } from "react-icons/ri";
+import { LiaUserEditSolid } from "react-icons/lia";
 
 const COntactCard = ({ contact }) => {
   return (
@@ -15,8 +15,8 @@ const COntactCard = ({ contact }) => {
           <p className="text-sm">{contact.email}</p>
         </div>
       </div>
-      <div className="flex items-center gap-3 text-3xl">
-        <RiEditCircleLine className="cursor-pointer" />
+      <div className="flex items-center gap-2 text-3xl">
+        <LiaUserEditSolid className="cursor-pointer text-zinc-500" />
         <IoMdTrash className="cursor-pointer text-orange" />
       </div>
     </div>
