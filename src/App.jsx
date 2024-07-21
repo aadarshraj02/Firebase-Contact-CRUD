@@ -62,9 +62,7 @@ function App() {
           ))}
         </div>
       </div>
-      <Model isOpen={isOpen} onClose={onClose}>
-        Hi
-      </Model>
+ 
     </>
   );
 }
