@@ -4,7 +4,7 @@ import { FiSearch } from "react-icons/fi";
 import { useEffect, useState } from "react";
 import { collection, onSnapshot } from "firebase/firestore";
 import { db } from "./config/firebase";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ContactCard from "./components/COntactCard";
 import AddAndUpdateContact from "./components/AddAndUpdateContact";
