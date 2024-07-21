@@ -15,7 +15,7 @@ const COntactCard = ({ contact }) => {
           <p className="text-sm">{contact.email}</p>
         </div>
       </div>
-      <div className="flex items-center text-3xl gap-3">
+      <div className="flex items-center gap-3 text-3xl">
         <RiEditCircleLine className="cursor-pointer" />
         <IoMdTrash className="cursor-pointer text-orange" />
       </div>
