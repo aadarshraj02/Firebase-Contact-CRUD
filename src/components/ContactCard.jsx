@@ -4,8 +4,11 @@ import { IoMdTrash } from "react-icons/io";
 import { LiaUserEditSolid } from "react-icons/lia";
 import { db } from "../config/firebase";
 import AddAndUpdateContact from "./AddAndUpdateContact";
+import useDisclouse from "../hooks/useDisclouse";
 
 const COntactCard = ({ contact }) => {
+  const { isOpen, onClose, onOpen } = useDisclouse();
+
   const deleteContact = async (id) => {
     try {
       await deleteDoc(doc(db, "contacts", id));
@@ -35,7 +38,7 @@ const COntactCard = ({ contact }) => {
           />
         </div>
       </div>
-      <AddAndUpdateContact isOpen={} onClose={} />
+      <AddAndUpdateContact isOpen={isOpen} onClose={onClose} />
     </>
   );
 };
