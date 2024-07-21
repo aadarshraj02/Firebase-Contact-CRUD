@@ -10,7 +10,12 @@ function App() {
   const [contacts, setContacts] = useState([]);
   const [open, setOpen] = useState(false);
 
-
+  const onOpen = () => {
+    setOpen(true);
+  };
+  const onClose = () => {
+    setOpen(false);
+  };
 
   useEffect(() => {
     const getContacts = async () => {
