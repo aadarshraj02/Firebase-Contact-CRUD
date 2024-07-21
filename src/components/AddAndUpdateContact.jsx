@@ -1,7 +1,18 @@
 import { Field, Form, Formik } from "formik";
 import Model from "./Model";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../config/firebase";
 
 function AddAndUpdateContact({ isOpen, onClose }) {
+  const addContact = async (contact) => {
+    try {
+      const contactRef = collection(db, "contacts");
+      await addDoc(contactRef, contact);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div>
       <Model isOpen={isOpen} onClose={onClose}>
