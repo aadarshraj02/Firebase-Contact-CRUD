@@ -2,11 +2,24 @@ import { AiFillPlusCircle } from "react-icons/ai";
 import Navbar from "./components/Navbar";
 import { FiSearch } from "react-icons/fi";
 import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "./config/firebase";
 
 function App() {
   const [contacts, setContacts] = useState([]);
 
-  useEffect(()=>{},[])
+  useEffect(() => {
+    const getContacts = async () => {
+      try {
+        const contactsRef = collection(db, "contacts");
+        const contactsSnapSot = await getDocs(contactsRef);
+        console.log(contactsSnapSot);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    getContacts();
+  }, []);
 
   return (
     <div className="mx-auto max-w-[370px] px-4">
