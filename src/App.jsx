@@ -13,7 +13,8 @@ function App() {
       try {
         const contactsRef = collection(db, "contacts");
         const contactsSnapSot = await getDocs(contactsRef);
-        console.log(contactsSnapSot);
+        const contactLists = contactsSnapSot.docs.map((doc) => doc.data());
+        console.log(contactLists);
       } catch (error) {
         console.error(error);
       }
