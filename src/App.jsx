@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "./config/firebase";
 import ContactCard from "./components/COntactCard";
-import Model from "./components/Model";
 import AddAndUpdateContact from "./components/AddAndUpdateContact";
 
 function App() {
@@ -63,7 +62,7 @@ function App() {
           ))}
         </div>
       </div>
-      <AddAndUpdateContact />
+      <AddAndUpdateContact onClose={onClose} isOpen={isOpen} />
     </>
   );
 }
