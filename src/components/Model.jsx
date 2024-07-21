@@ -1,5 +1,5 @@
 function Model({ onClose, isOpen, children }) {
-  return <div></div>;
+  return <>{isOpen && <div>Modal</div>}</>;
 }
 
 export default Model;

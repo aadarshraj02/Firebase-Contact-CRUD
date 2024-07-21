@@ -51,7 +51,10 @@ function App() {
               className="h-10 flex-grow rounded-md border border-white bg-transparent p-2 pr-10 text-white outline-none"
             />
           </div>
-          <AiFillPlusCircle className="cursor-pointer text-5xl text-white" />
+          <AiFillPlusCircle
+            onClick={onOpen}
+            className="cursor-pointer text-5xl text-white"
+          />
         </div>
         <div>
           {contacts.map((contact) => (
