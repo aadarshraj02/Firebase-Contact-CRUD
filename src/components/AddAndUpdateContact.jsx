@@ -3,7 +3,7 @@ import Model from "./Model";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../config/firebase";
 
-function AddAndUpdateContact({ isOpen, onClose, isUpdate }) {
+function AddAndUpdateContact({ isOpen, onClose, isUpdate, contact }) {
   const addContact = async (contact) => {
     try {
       const contactRef = collection(db, "contacts");
@@ -17,10 +17,17 @@ function AddAndUpdateContact({ isOpen, onClose, isUpdate }) {
     <div>
       <Model isOpen={isOpen} onClose={onClose}>
         <Formik
-          initialValues={{
-            name: "",
-            email: "",
-          }}
+          initialValues={
+            isUpdate
+              ? {
+                  name: contact.name,
+                  email: contact.email,
+                }
+              : {
+                  name: "",
+                  email: "",
+                }
+          }
           onSubmit={(values) => addContact(values)}
         >
           <Form className="flex flex-col gap-4">
