@@ -37,9 +37,15 @@ function AddAndUpdateContact({ isOpen, onClose, isUpdate, contact }) {
                   email: "",
                 }
           }
-          onSubmit={(values) =>
-            isUpdate(values, contact.id) ? updateContact : addContact(values)
-          }
+          onSubmit={async (values, { resetForm }) => {
+            if (isUpdate) {
+              await updateContact(values, contact.id);
+            } else {
+              await addContact(values);
+            }
+            resetForm();
+            onClose();
+          }}
         >
           <Form className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
