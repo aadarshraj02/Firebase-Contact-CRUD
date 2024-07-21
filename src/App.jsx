@@ -2,7 +2,7 @@ import { AiFillPlusCircle } from "react-icons/ai";
 import Navbar from "./components/Navbar";
 import { FiSearch } from "react-icons/fi";
 import { useEffect, useState } from "react";
-import { collection, getDocs, onSnapshot } from "firebase/firestore";
+import { collection, onSnapshot } from "firebase/firestore";
 import { db } from "./config/firebase";
 import ContactCard from "./components/COntactCard";
 import AddAndUpdateContact from "./components/AddAndUpdateContact";
