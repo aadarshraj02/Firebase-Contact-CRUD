@@ -14,6 +14,7 @@ function Model({ onClose, isOpen, children }) {
                 className="cursor-pointer text-3xl"
               />
             </div>
+            {children}
           </div>
 
           <div className="absolute top-0 z-10 h-screen w-screen backdrop-blur-md" />
