@@ -1,5 +1,8 @@
-/* eslint-disable react/prop-types */
-const ContactCard = ({contact}) => {
+import { HiOutlineUserCircle } from "react-icons/hi";
+import { IoMdTrash } from "react-icons/io";
+import { RiEditCircleLine } from "react-icons/ri";
+
+const ContactCard = ({ contact }) => {
   return (
     <div
       key={contact.id}
