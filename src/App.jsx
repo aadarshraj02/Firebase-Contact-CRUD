@@ -58,6 +58,7 @@ function App() {
           ))}
         </div>
       </div>
+      <Model />
     </>
   );
 }
