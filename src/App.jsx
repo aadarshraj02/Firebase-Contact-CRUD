@@ -5,10 +5,11 @@ import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "./config/firebase";
 import ContactCard from "./components/COntactCard";
+import Model from "./components/Model";
 
 function App() {
   const [contacts, setContacts] = useState([]);
-  const [open, setOpen] = useState(false);
+  const [isOpen, setOpen] = useState(false);
 
   const onOpen = () => {
     setOpen(true);
@@ -58,7 +59,9 @@ function App() {
           ))}
         </div>
       </div>
-      <Model />
+      <Model isOpen={isOpen} onClose={onClose}>
+        Hi
+      </Model>
     </>
   );
 }
