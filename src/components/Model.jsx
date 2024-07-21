@@ -1,6 +1,4 @@
-
-
-function Model() {
+function Model({ onClose, isOpen, children }) {
   return <div></div>;
 }
 
