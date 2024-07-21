@@ -14,12 +14,20 @@ function AddAndUpdateContact({ isOpen, onClose }) {
         >
           <Form className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
-              <label htmlFor="name">Name</label>
-              <Field name="name" className="rounded-md border" />
+              <label className="text-xl font-medium" htmlFor="name">
+                Name
+              </label>
+              <Field name="name" className="rounded-md border p-2" />
             </div>
             <div className="flex flex-col gap-1">
-              <label htmlFor="email">Email</label>
-              <Field type="email" name="email" className="rounded-md border" />
+              <label className="text-xl font-medium" htmlFor="email">
+                Email
+              </label>
+              <Field
+                type="email"
+                name="email"
+                className="rounded-md border p-2"
+              />
             </div>
 
             <button className="self-end rounded-md border bg-orange px-3 py-1.5 text-white">
