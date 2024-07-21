@@ -7,7 +7,7 @@ function Model({ onClose, isOpen, children }) {
     <>
       {isOpen && (
         <>
-          <div className="relative z-20 mx-auto min-h-[300px] max-w-[80%] bg-white p-4">
+          <div className="relative z-20 mx-auto min-h-[300px] max-w-[80%] bg-white p-4 sm:max-w-[50%] md:max-w-[40%]">
             <div className="flex justify-end">
               <AiOutlineClose
                 onClick={onClose}
