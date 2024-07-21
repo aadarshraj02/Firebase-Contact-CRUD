@@ -1,8 +1,18 @@
+import { deleteDoc, doc } from "firebase/firestore";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import { IoMdTrash } from "react-icons/io";
 import { LiaUserEditSolid } from "react-icons/lia";
+import { db } from "../config/firebase";
 
 const COntactCard = ({ contact }) => {
+  const deleteContact = async (id) => {
+    try {
+      await deleteDoc(doc(db, "contacts", id));
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div
       key={contact.id}
@@ -17,7 +27,10 @@ const COntactCard = ({ contact }) => {
       </div>
       <div className="flex items-center gap-2 text-3xl">
         <LiaUserEditSolid className="cursor-pointer text-zinc-500" />
-        <IoMdTrash className="cursor-pointer text-orange" />
+        <IoMdTrash
+          onClick={() => deleteContact(contact.id)}
+          className="cursor-pointer text-orange"
+        />
       </div>
     </div>
   );
