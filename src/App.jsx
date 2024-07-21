@@ -45,11 +45,13 @@ function App() {
       </div>
       <div>
         {contacts.map((contact) => (
-          <div key={contact.id}>
-            <HiOutlineUserCircle />
-            <div className="text-white">
-              <h2>{contact.name}</h2>
-              <p>{contact.email}</p>
+          <div key={contact.id} className="bg-yellow">
+            <div>
+              <HiOutlineUserCircle className="text-4xl text-orange" />
+              <div className="">
+                <h2>{contact.name}</h2>
+                <p>{contact.email}</p>
+              </div>
             </div>
             <div>
               <RiEditCircleLine />
