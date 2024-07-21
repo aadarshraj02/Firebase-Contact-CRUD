@@ -45,7 +45,10 @@ function App() {
         {contacts.map((contact) => (
           <div key={contact.id}>
             <HiOutlineUserCircle />
-            
+            <div>
+              <h2></h2>
+              <p></p>
+            </div>
           </div>
         ))}
       </div>
