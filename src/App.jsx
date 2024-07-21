@@ -7,6 +7,7 @@ import { db } from "./config/firebase";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import { RiEditCircleLine } from "react-icons/ri";
 import { IoMdTrash } from "react-icons/io";
+import ContactCard from "./components/COntactCard";
 
 function App() {
   const [contacts, setContacts] = useState([]);
@@ -45,7 +46,7 @@ function App() {
       </div>
       <div>
         {contacts.map((contact) => (
-       
+          <ContactCard key={contact.id} contact={contact} />
         ))}
       </div>
     </div>

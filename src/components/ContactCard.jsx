@@ -2,7 +2,7 @@ import { HiOutlineUserCircle } from "react-icons/hi";
 import { IoMdTrash } from "react-icons/io";
 import { RiEditCircleLine } from "react-icons/ri";
 
-const ContactCard = ({ contact }) => {
+const COntactCard = ({ contact }) => {
   return (
     <div
       key={contact.id}
@@ -23,4 +23,4 @@ const ContactCard = ({ contact }) => {
   );
 };
 
-export default ContactCard;
+export default COntactCard;
