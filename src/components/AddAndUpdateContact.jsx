@@ -21,7 +21,7 @@ function AddAndUpdateContact({ isOpen, onClose }) {
             name: "",
             email: "",
           }}
-          onSubmit={(values) => console.log(values)}
+          onSubmit={(values) => addContact(values)}
         >
           <Form className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
