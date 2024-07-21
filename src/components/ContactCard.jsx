@@ -41,7 +41,7 @@ const COntactCard = ({ contact }) => {
           />
         </div>
       </div>
-      <AddAndUpdateContact isOpen={isOpen} onClose={onClose} />
+      <AddAndUpdateContact isUpdate isOpen={isOpen} onClose={onClose} />
     </>
   );
 };

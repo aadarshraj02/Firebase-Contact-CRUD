@@ -3,7 +3,7 @@ import Model from "./Model";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../config/firebase";
 
-function AddAndUpdateContact({ isOpen, onClose }) {
+function AddAndUpdateContact({ isOpen, onClose, isUpdate }) {
   const addContact = async (contact) => {
     try {
       const contactRef = collection(db, "contacts");
@@ -42,8 +42,7 @@ function AddAndUpdateContact({ isOpen, onClose }) {
             </div>
 
             <button className="self-end rounded-md border bg-orange px-3 py-1.5 text-white">
-              {" "}
-              Add Contact
+              {isUpdate ? "Update " : "Add "}Contact
             </button>
           </Form>
         </Formik>
