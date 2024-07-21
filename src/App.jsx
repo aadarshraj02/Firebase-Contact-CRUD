@@ -46,8 +46,8 @@ function App() {
           <div key={contact.id}>
             <HiOutlineUserCircle />
             <div>
-              <h2></h2>
-              <p></p>
+              <h2>{contact.name}</h2>
+              <p>{contact.email}</p>
             </div>
           </div>
         ))}
