@@ -5,7 +5,13 @@ function AddAndUpdateContact({ isOpen, onClose }) {
   return (
     <div>
       <Model isOpen={isOpen} onClose={onClose}>
-        <Formik>
+        <Formik
+          initialValues={{
+            name: "",
+            email: "",
+          }}
+          onSubmit={(values) => console.log(values)}
+        >
           <Form className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
               <label htmlFor="name">Name</label>
