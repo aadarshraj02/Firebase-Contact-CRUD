@@ -35,6 +35,26 @@ function App() {
     getContacts();
   }, []);
 
+  const filterContacts = (e) => {
+    const value = e.target.value;
+    const contactsRef = collection(db, "contacts");
+    onSnapshot(contactsRef, (snapshot) => {
+      const contactLists = snapshot.docs.map((doc) => {
+        return {
+          id: doc.id,
+          ...doc.data(),
+        };
+      });
+
+      const filteredContacts = contactLists.filter((contact) =>
+        contact.name.toLowerCase().includes(value.toLowerCase()),
+      );
+
+      setContacts(filteredContacts);
+      return filteredContacts;
+    });
+  };
+
   return (
     <>
       {" "}
@@ -44,6 +64,7 @@ function App() {
           <div className="relative flex flex-grow items-center justify-end">
             <FiSearch className="absolute mr-2 text-3xl text-white" />
             <input
+              onChange={filterContacts}
               placeholder="search contact"
               type="text"
               className="h-10 flex-grow rounded-md border border-white bg-transparent p-2 pr-10 text-white outline-none"
