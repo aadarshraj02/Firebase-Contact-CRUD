@@ -1,6 +1,6 @@
 import { Field, Form, Formik } from "formik";
 import Model from "./Model";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
 import { db } from "../config/firebase";
 
 function AddAndUpdateContact({ isOpen, onClose, isUpdate, contact }) {
@@ -8,6 +8,15 @@ function AddAndUpdateContact({ isOpen, onClose, isUpdate, contact }) {
     try {
       const contactRef = collection(db, "contacts");
       await addDoc(contactRef, contact);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const updateContact = async (contact, id) => {
+    try {
+      const contactRef = doc(db, "contacts", id);
+      await updateDoc(contactRef, contact);
     } catch (error) {
       console.error(error);
     }
@@ -28,7 +37,9 @@ function AddAndUpdateContact({ isOpen, onClose, isUpdate, contact }) {
                   email: "",
                 }
           }
-          onSubmit={(values) => addContact(values)}
+          onSubmit={(values) =>
+            isUpdate(values, contact.id) ? updateContact : addContact(values)
+          }
         >
           <Form className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
