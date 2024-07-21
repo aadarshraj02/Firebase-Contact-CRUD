@@ -1,5 +1,5 @@
-const COntactCard = () => {
+const ContactCard = () => {
   return <div></div>;
 };
 
-export default COntactCard;
+export default ContactCard;
