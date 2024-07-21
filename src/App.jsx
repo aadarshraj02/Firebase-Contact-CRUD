@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import ContactCard from "./components/COntactCard";
 import AddAndUpdateContact from "./components/AddAndUpdateContact";
 import useDisclouse from "./hooks/useDisclouse";
+import NotFoundContact from "./components/NotFoundContact";
 
 function App() {
   const [contacts, setContacts] = useState([]);
@@ -76,9 +77,13 @@ function App() {
           />
         </div>
         <div>
-          {contacts.map((contact) => (
-            <ContactCard key={contact.id} contact={contact} />
-          ))}
+          {contacts.length <= 0 ? (
+            <NotFoundContact></NotFoundContact>
+          ) : (
+            contacts.map((contact) => (
+              <ContactCard key={contact.id} contact={contact} />
+            ))
+          )}
         </div>
       </div>
       <AddAndUpdateContact onClose={onClose} isOpen={isOpen} />
