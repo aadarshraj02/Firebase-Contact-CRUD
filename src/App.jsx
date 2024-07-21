@@ -5,11 +5,11 @@ function App() {
   return (
     <div className="max-w-[370px] mx-auto px-4">
       <Navbar></Navbar>
-      <div className="flex ">
-        <FiSearch />
+      <div className="flex relative items-center justify-end">
+        <FiSearch className="text-white text-3xl absolute mr-2" />
         <input
           type="text"
-          className="bg-transparent border border-white rounded-md h-10 flex-grow"
+          className="bg-transparent border border-white rounded-md h-10 flex-grow text-white pr-10 outline-none p-2"
         />
       </div>
     </div>
