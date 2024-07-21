@@ -19,7 +19,7 @@ function App() {
             ...doc.data(),
           };
         });
-        console.log(contactLists);
+        setContacts(contactLists);
       } catch (error) {
         console.error(error);
       }
