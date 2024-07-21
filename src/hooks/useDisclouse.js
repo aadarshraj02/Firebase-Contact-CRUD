@@ -1,5 +1,20 @@
+import { useState } from "react";
+
 function useDisclouse() {
-  return <div></div>;
+  const [isOpen, setOpen] = useState(false);
+
+  const onOpen = () => {
+    setOpen(true);
+  };
+  const onClose = () => {
+    setOpen(false);
+  };
+
+  return {
+    onClose,
+    onOpen,
+    isOpen,
+  };
 }
 
 export default useDisclouse;
