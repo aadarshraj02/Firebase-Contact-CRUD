@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "./config/firebase";
 import { HiOutlineUserCircle } from "react-icons/hi";
+import { RiEditCircleLine } from "react-icons/ri";
+import { IoMdTrash } from "react-icons/io";
 
 function App() {
   const [contacts, setContacts] = useState([]);
@@ -45,9 +47,13 @@ function App() {
         {contacts.map((contact) => (
           <div key={contact.id}>
             <HiOutlineUserCircle />
-            <div>
+            <div className="text-white">
               <h2>{contact.name}</h2>
               <p>{contact.email}</p>
+            </div>
+            <div>
+              <RiEditCircleLine />
+              <IoMdTrash />
             </div>
           </div>
         ))}
