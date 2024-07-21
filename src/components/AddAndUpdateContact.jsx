@@ -1,4 +1,4 @@
-import { Field, Form, Formik } from "formik";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import Model from "./Model";
 import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
 import { db } from "../config/firebase";
@@ -63,6 +63,9 @@ function AddAndUpdateContact({ isOpen, onClose, isUpdate, contact }) {
                 Name
               </label>
               <Field name="name" className="rounded-md border p-2" />
+              <div className="text-sm text-red-500">
+                <ErrorMessage name="name" />
+              </div>
             </div>
             <div className="flex flex-col gap-1">
               <label className="text-xl font-medium" htmlFor="email">
@@ -73,6 +76,9 @@ function AddAndUpdateContact({ isOpen, onClose, isUpdate, contact }) {
                 name="email"
                 className="rounded-md border p-2"
               />
+              <div className="text-sm text-red-500">
+                <ErrorMessage name="email" />
+              </div>
             </div>
 
             <button className="self-end rounded-md border bg-orange px-3 py-1.5 text-white">
